@@ -1,6 +1,7 @@
-## Repository module
+# Repository module
 
 ### This module Creates a Repository at Github using terraform
+---
 
 ## Requirements
 

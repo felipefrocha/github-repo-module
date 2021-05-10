@@ -1,7 +1,8 @@
 /**
- * ## Repository module
+ * # Repository module
  *
- * ### This module Creates a Repository at Github using terraform 
+ * ### This module Creates a Repository at Github using terraform
+ * ---
  */
 resource "github_repository" "repository" {
   name        = var.repository_name
