@@ -4,6 +4,17 @@
  * ### This module Creates a Repository at Github using terraform
  * ---
  */
+
+terraform {
+  required_version = ">= 0.13.0"
+  required_providers {
+    github = {
+      version = ">= 4.9.0"
+      source = "hashicorp/github"
+    }
+  }
+}
+
 resource "github_repository" "repository" {
   name        = var.repository_name
   description = var.repository_description
