@@ -29,17 +29,17 @@ install:
 	@chmod +x /tmp/terraform-docs
 	@sudo mv /tmp/terraform-docs /usr/local/bin/terraform-docs
 	@echo Installed terraform docs
-setup: install
+setup: 
 	@cat>./.git/hooks/pre-commit<<EOF
 	#!/bin/bash
-	cd pwd/../../
+	cd "$$PWD"
 	make docs
 	git add "./*README.md"
 	EOF
 	@chmod +x .git/hooks/pre-commit
 	@cat>./.git/hooks/post-commit<<EOF
 	#!/bin/bash
-	cd pwd/../../
+	cd "$$PWD"
 	git add "./*README.md"
 	git commit -m "Updating Terraform Modules with terraform-docs"
 	EOF
