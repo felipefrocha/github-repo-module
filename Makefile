@@ -29,7 +29,7 @@ install:
 	@chmod +x /tmp/terraform-docs
 	@sudo mv /tmp/terraform-docs /usr/local/bin/terraform-docs
 	@echo Installed terraform docs
-setup:
+setup: install
 	@cat>./.git/hooks/pre-commit<<EOF
 	#!/bin/bash
 	cd pwd/../../
