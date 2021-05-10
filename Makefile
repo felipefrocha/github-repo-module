@@ -36,12 +36,14 @@ setup:
 	make docs
 	git add "./*README.md"
 	EOF
+	@chmod +x .git/hooks/pre-commit
 	@cat>./.git/hooks/post-commit<<EOF
 	#!/bin/bash
 	cd pwd/../../
 	git add "./*README.md"
 	git commit -m "Updating Terraform Modules with terraform-docs"
 	EOF
+	@chmod +x ./.git/hooks/post-commit
 
 docs:
 	@find . -type d -exec bash -c 'terraform-docs md "{}" > "{}"/README.md;' \;
