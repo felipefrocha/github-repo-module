@@ -21,7 +21,7 @@ resource "github_repository" "repository" {
 
   visibility = var.repository_visibility
   
-  has_issues = =false
+  has_issues = false
   has_projects = false
   has_wiki = false
   
